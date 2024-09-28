@@ -1,22 +1,23 @@
-import { Header } from "./components/Header.jsx"
-import ProductTable from "./components/ProductTable.jsx";
-export function App(){
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Layout } from "./Layout";
+import routes from "./routes";
+import { Home } from "./Pages/Home";
+import { Signup } from "./Pages/Signup";
 
+export function App() {
+    
+  const router = createBrowserRouter(routes);
 
-
-    return (
-
-        <>
-
-            <header>
-                <Header title="My application title" />
-            </header>
-            <main>
-                <ProductTable />
-            </main>
-            <footer></footer>
-
-        </>
-
-    );
+  return (
+    <>
+      <Layout>
+        <main>
+          <RouterProvider router={router}>
+            <Home />
+            <Signup />
+          </RouterProvider>
+        </main>
+      </Layout>
+    </>
+  );
 }
