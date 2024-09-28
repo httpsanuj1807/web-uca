@@ -5,17 +5,14 @@ import { Home } from "./Pages/Home";
 import { Signup } from "./Pages/Signup";
 
 export function App() {
-    
+
   const router = createBrowserRouter(routes);
 
   return (
     <>
       <Layout>
         <main>
-          <RouterProvider router={router}>
-            <Home />
-            <Signup />
-          </RouterProvider>
+          <RouterProvider router={router}></RouterProvider>
         </main>
       </Layout>
     </>
